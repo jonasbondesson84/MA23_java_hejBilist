@@ -19,6 +19,8 @@ public class Main {
         v1.drive(); // Prints “Car drove 10 miles - 90 miles to go”
         v2.drive(); // Prints “Tank drove 5 miles - 1995 miles to go”
 
+        System.out.println(v1.getDriver().getName());
+
 
     }
 }

@@ -15,24 +15,16 @@ public class Vehicle {
         System.out.println(type + " created. " + distanceLeft + " miles to go!");
     }
 
-    public String getType() {
-        return type;
+    public Driver getDriver() {
+        return driver;
     }
 
-    public int getMileage() {
-        return distanceLeft;
-    }
-
-    public int getAgeLimit() {
-        return ageLimit;
-    }
-
-    public void setDriver(Driver d) {
-        if(d.getAge()<ageLimit) {
-            System.out.println("Driver not changed! " + d.getName() + " is " + d.getAge() + ", but must be " + ageLimit + " or older to drive " + type);
+    public void setDriver(Driver currentDriver) {
+        if(currentDriver.getAge() < ageLimit) {
+            System.out.println("Driver not changed! " + currentDriver.getName() + " is " + currentDriver.getAge() + ", but must be " + ageLimit + " or older to drive " + type);
         } else {
-            driver=d;
-            System.out.println("Driver changed to " + d.getName());
+            this.driver = currentDriver;
+            System.out.println("Driver changed to " + driver.getName());
         }
 
     }
@@ -40,7 +32,7 @@ public class Vehicle {
 
     public void drive() {
         if(driver != null) {
-            distanceLeft=distanceLeft-driveDistance;
+            distanceLeft -= driveDistance;
             System.out.println(type + " drove " + driveDistance + " miles - " + distanceLeft + " miles to go");
 
         } else {
